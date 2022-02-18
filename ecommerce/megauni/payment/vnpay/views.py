@@ -115,7 +115,7 @@ class VNPayReturnView(EdxOrderPlacementMixin, View):
         order_number = payment_response.get('vnp_TxnRef')
 
         basket_id = OrderNumberGenerator().basket_id(order_number)
-        basket = Basket.submitted.get(id=basket_id)
+        basket = Basket.objects.get(id=basket_id)
 
         if not basket:
             return redirect(self.payment_processor.error_url)
