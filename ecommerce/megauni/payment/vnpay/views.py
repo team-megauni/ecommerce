@@ -49,7 +49,7 @@ class VNPayIPNView(EdxOrderPlacementMixin, View):
     def _get_basket(self, order_number):
         try:
             basket_id = OrderNumberGenerator().basket_id(order_number)
-            basket = Basket.open.get(id=basket_id)
+            basket = Basket.objects.get(id=basket_id)
 
             basket.strategy = strategy.Default()
 
