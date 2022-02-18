@@ -83,7 +83,7 @@ class VNPay(BasePaymentProcessor):
 
         vnp.requestData['vnp_CreateDate'] = datetime.now().strftime('%Y%m%d%H%M%S')  # 20150410063022
         vnp.requestData['vnp_IpAddr'] = ipaddr
-        vnp.requestData['vnp_ReturnUrl'] = urljoin(get_ecommerce_url(), reverse('vnpay:return'))
+        vnp.requestData['vnp_ReturnUrl'] = urljoin(get_ecommerce_url(), reverse('vnpay-return'))
 
         vnpay_payment_url = vnp.get_payment_url(self.configuration['payment_url'], self.configuration['hash_secret_key'])
         
