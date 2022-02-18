@@ -18,7 +18,7 @@ from ecommerce.extensions.basket.utils import basket_add_organization_attribute
 from ecommerce.extensions.checkout.mixins import EdxOrderPlacementMixin
 from ecommerce.extensions.checkout.utils import get_receipt_page_url
 
-from ecommerce.megauni.payment.vnpay import processor as VNPay  
+from ecommerce.megauni.payment.vnpay.processor import VNPay  
 
 logger = logging.getLogger(__name__)
 
