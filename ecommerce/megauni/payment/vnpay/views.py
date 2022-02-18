@@ -71,6 +71,7 @@ class VNPayIPNView(EdxOrderPlacementMixin, View):
         basket = self._get_basket(order_number)
 
         if not basket:
+            logger.warning(u"VNPay: Basket not found for order number [%s].", order_number)
             return JsonResponse({'RspCode': '01', 'Message': u"Basket not found"})
 
         try:
