@@ -18,7 +18,7 @@ from ecommerce.extensions.basket.utils import basket_add_organization_attribute
 from ecommerce.extensions.checkout.mixins import EdxOrderPlacementMixin
 from ecommerce.extensions.checkout.utils import get_receipt_page_url
 
-from ecommerce.megauni.payment.vnpay.processor import VNPay  
+from ecommerce.megauni.payment.vnpay.processor import VNPay
 
 logger = logging.getLogger(__name__)
 
@@ -78,12 +78,16 @@ class VNPayIPNView(EdxOrderPlacementMixin, View):
                 try:
                     self.handle_payment(payment_response, basket)
                 except InvalidSignatureError:
+                    logger.warning(u"VNPay: Invalid signature for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '97', 'Message': u"Invalid signature"})
                 except RedundantPaymentNotificationError:
+                    logger.warning(u"VNPay: Order Already Update for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '02', 'Message': u"Order Already Update"})
                 except ExcessivePaymentForOrderError:
+                    logger.exception(u"VNPay: Invalid request for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '99', 'Message': u"Invalid request"})
                 except PaymentError:
+                    logger.exception(u"VNPay: Invalid request for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '99', 'Message': u"Invalid request"})
         except:  # pylint: disable=bare-except
             logger.exception('Attempts to handle payment for basket [%d] failed.', basket.id)
@@ -94,13 +98,15 @@ class VNPayIPNView(EdxOrderPlacementMixin, View):
         except Exception:  # pylint: disable=broad-except
             # any errors here will be logged in the create_order method. If we wanted any
             # Paypal specific logging for this error, we would do that here.
+            logger.warning(u"VNPay: Invalid request for basket [%d].", basket.id)
             return JsonResponse({'RspCode': '99', 'Message': u"System error"})
         
         try:
             self.handle_post_order(order)
         except Exception:  # pylint: disable=broad-except
             self.log_order_placement_exception(basket.order_number, basket.id)
-
+        
+        logger.info(u"VNPay: Confirm Success for basket [%d].", basket.id)
         return JsonResponse({'RspCode': '00', 'Message': u"Confirm Success"})
 
 
