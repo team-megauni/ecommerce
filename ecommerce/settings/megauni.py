@@ -3,7 +3,7 @@ from ecommerce.settings.production import *
 
 # PAYMENT PROCESSING
 PAYMENT_PROCESSORS = (
-    "ecommerce.extensions.payment.processors.vnpay.VNPay",
+    "ecommerce.megauni.payment.vnpay.processor.VNPay",
 )
 
 
