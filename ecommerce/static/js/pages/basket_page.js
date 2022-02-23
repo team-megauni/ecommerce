@@ -245,36 +245,36 @@ define([
                     countryData = Cookies.getJSON('edx-price-l10n'),
                     disclaimerPrefix;
 
-                // when the price value has a USD prefix, replace it with a $
-                price = price.replace('USD', '$');
+                // when the price value has a VND prefix, replace it with a $
+                price = price.replace('VND', '₫');
                 disclaimerPrefix = '* This total contains an approximate conversion. You will be charged ';
 
-                if (BasketPage.isValidLocalCurrencyCookie(countryData) && countryData.countryCode !== 'USA') {
+                if (BasketPage.isValidLocalCurrencyCookie(countryData) && countryData.countryCode !== 'VI') {
                     $('<span>').attr('class', 'price-disclaimer')
-                        .text(gettext(disclaimerPrefix) + price + ' USD.')
+                        .text(gettext(disclaimerPrefix) + price + ' VND.')
                         .appendTo('div[aria-labelledby="order-details-region"]');
                 }
             },
 
-            formatToLocalPrice: function(prefix, priceInUsd) {
+            formatToLocalPrice: function(prefix, priceInVnd) {
                 var countryData = Cookies.getJSON('edx-price-l10n'),
-                    parsedPriceInUsd;
+                    parsedPriceInVnd;
 
-                // Default to USD when the exchange rate cookie doesn't exist
-                if (BasketPage.isValidLocalCurrencyCookie(countryData) && countryData.countryCode !== 'USA') {
+                // Default to VND when the exchange rate cookie doesn't exist
+                if (BasketPage.isValidLocalCurrencyCookie(countryData) && countryData.countryCode !== 'VI') {
                     // assumes all formatted prices have a comma every three places
-                    parsedPriceInUsd = parseFloat(priceInUsd.replace(',', ''));
-                    return countryData.symbol + Math.round(parsedPriceInUsd * countryData.rate).toLocaleString() + ' '
+                    parsedPriceInVnd = parseFloat(priceInVnd.replace(',', ''));
+                    return countryData.symbol + Math.round(parsedPriceInVnd * countryData.rate).toLocaleString() + ' '
                         + countryData.code + ' *';
                 } else {
-                    return prefix + priceInUsd;
+                    return prefix + priceInVnd;
                 }
             },
 
-            generateLocalPriceText: function(usdPriceText) {
-                // Assumes price value is prefixed by $ or USD with optional sign followed by optional string
-                var localPriceText = usdPriceText,
-                    prefixMatch = localPriceText.match(/(\$|USD)?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?\.[0-9]{1,2}/),
+            generateLocalPriceText: function(vndPriceText) {
+                // Assumes price value is prefixed by $ or VND with optional sign followed by optional string
+                var localPriceText = vndPriceText,
+                    prefixMatch = localPriceText.match(/(₫|VND)?(([1-9][0-9]{0,2}(,[0-9]{3})*)|[0-9]+)?\.[0-9]{1,2}/),
                     entireMatch,
                     groupMatch,
                     startIndex,

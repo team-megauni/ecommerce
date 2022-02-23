@@ -1,4 +1,12 @@
+from django.utils.translation import ugettext_lazy as _
+
 from ecommerce.settings.production import *
+
+
+LANGUAGES = (
+    ('en', _('English')),
+    ('vi', _('Vietnamese')),
+)
 
 
 # PAYMENT PROCESSING
@@ -15,3 +23,4 @@ EXTRA_PAYMENT_PROCESSOR_URLS = {
     "vnpay": "ecommerce.megauni.payment.vnpay.urls"
 }
 # END URL CONFIGURATION
+
