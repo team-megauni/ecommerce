@@ -76,7 +76,7 @@ class DiscoveryTestMixin:
     def create_entitlement_product(self, course_uuid=None, certificate_type='verified'):
         entitlement = factories.ProductFactory(
             product_class=self.entitlement_product_class, stockrecords__partner=PartnerFactory(),
-            stockrecords__price_currency='USD'
+            stockrecords__price_currency='VND'
         )
         entitlement.attr.UUID = course_uuid if course_uuid else uuid4()
         entitlement.attr.certificate_type = certificate_type

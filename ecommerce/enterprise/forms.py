@@ -69,9 +69,9 @@ class EnterpriseOfferForm(forms.ModelForm):
         help_texts = {
             'end_datetime': '',
             'max_global_applications': _('The maximum number of enrollments that can redeem this offer.'),
-            'max_discount': _('The maximum USD dollar amount that can be redeemed by this offer.'),
+            'max_discount': _('The maximum VND amount that can be redeemed by this offer.'),
             'max_user_applications': _('The maximum number of enrollments, by a user, that can redeem this offer.'),
-            'max_user_discount': _('The maximum USD dollar amount that can be redeemed using this offer by a user.'),
+            'max_user_discount': _('The maximum VND amount that can be redeemed using this offer by a user.'),
         }
         labels = {
             'start_datetime': _('Start Date'),
