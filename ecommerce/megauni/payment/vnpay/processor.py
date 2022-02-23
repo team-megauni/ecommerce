@@ -16,7 +16,7 @@ from ecommerce.core.url_utils import get_ecommerce_url
 from ecommerce.extensions.payment.processors import BasePaymentProcessor, HandledProcessorResponse
 from ecommerce.extensions.payment.utils import get_basket_program_uuid
 
-from ecommerce.megauni.payment.vnpay import client as vnpay
+from ecommerce.megauni.payment.vnpay.client import vnpay
 
 logger = logging.getLogger(__name__)
 
@@ -105,10 +105,11 @@ class VNPay(BasePaymentProcessor):
 
         order_number = response.get('vnp_TxnRef')
         transaction_id = response.get('vnp_TransactionNo')
-        total = Decimal(response.get('vnp_Amount'))
-        currency = response.get('vnp_CurrCode')
-        card_number = None
+        total = Decimal(response.get('vnp_Amount')) / 100
+        currency = 'VND' # response.get('vnp_CurrCode')
         card_type = response.get('vnp_CardType')
+
+        label = 'VNPay (%s)' % card_type
 
         if Order.objects.filter(number=order_number).exists():
             if PaymentProcessorResponse.objects.filter(processor_name=self.NAME, transaction_id=transaction_id).exists():
@@ -121,6 +122,6 @@ class VNPay(BasePaymentProcessor):
             transaction_id=transaction_id,
             total=total,
             currency=currency,
-            card_number=card_number,
+            card_number=label,
             card_type=card_type,
         )
