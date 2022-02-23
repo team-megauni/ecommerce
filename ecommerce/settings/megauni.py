@@ -3,7 +3,7 @@ from ecommerce.settings.production import *
 
 # PAYMENT PROCESSING
 PAYMENT_PROCESSORS = (
-    "ecommerce.extensions.payment.processors.vnpay.VNPay",
+    "ecommerce.megauni.payment.vnpay.processor.VNPay",
 )
 
 
@@ -12,6 +12,6 @@ PAYMENT_PROCESSORS = (
 #   "mycustompaymentprocessor": "ecommerce.payment.processors.mycustompaymentprocessor.urls"
 # }
 EXTRA_PAYMENT_PROCESSOR_URLS = {
-    "vnpay": "ecommerce.megauni.payment.vnpay.urls"
+    "vnpay": "ecommerce.megauni.payment.vnpay.urls",
 }
 # END URL CONFIGURATION
