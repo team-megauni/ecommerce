@@ -35,7 +35,7 @@ To create a course seat, follow these steps.
 
    * If you select **Verified**, you must add the following information.
 
-     * **Price (in USD)**
+     * **Price (in VND)**
      * **Upgrade Deadline**
      * **Verification Deadline**
      * **Include Honor Seat**: This option grants honor code certificates to
@@ -44,16 +44,16 @@ To create a course seat, follow these steps.
    * If you select **Professional Education**, you must add the following
      information.
 
-     * **Price (in USD)**
+     * **Price (in VND)**
      * **ID Verification Required?**
      * **Upgrade Deadline**
 
    * If you select **Credit**, you must add the following information.
 
-     * **Price (in USD)**: The price for a verified certificate.
+     * **Price (in VND)**: The price for a verified certificate.
      * **Upgrade Deadline**
      * **Credit Provider**
-     * **Price (USD)**: The price for course credit.
+     * **Price (VND)**: The price for course credit.
      * **Credit Hours**
      * **Upgrade Deadline**
      * **Verification Deadline**
