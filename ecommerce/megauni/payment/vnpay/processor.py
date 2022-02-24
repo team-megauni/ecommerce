@@ -112,7 +112,7 @@ class VNPay(BasePaymentProcessor):
 
         label = 'VNPay (%s)' % card_type
         
-        if basket is not None and basket.basket.total_incl_tax != total:
+        if basket is not None and basket.total_incl_tax != total:
             raise InvalidAmountError
 
         if Order.objects.filter(number=order_number).exists():
