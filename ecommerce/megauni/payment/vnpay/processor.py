@@ -16,6 +16,7 @@ from ecommerce.core.url_utils import get_ecommerce_url
 from ecommerce.extensions.payment.processors import BasePaymentProcessor, HandledProcessorResponse
 from ecommerce.extensions.payment.utils import get_basket_program_uuid
 
+from ecommerce.megauni.payment.exceptions import InvalidAmountError
 from ecommerce.megauni.payment.vnpay.client import vnpay
 
 logger = logging.getLogger(__name__)
@@ -110,6 +111,9 @@ class VNPay(BasePaymentProcessor):
         card_type = response.get('vnp_CardType')
 
         label = 'VNPay (%s)' % card_type
+        
+        if basket is not None and basket.basket.total_incl_tax != total:
+            raise InvalidAmountError
 
         if Order.objects.filter(number=order_number).exists():
             if PaymentProcessorResponse.objects.filter(processor_name=self.NAME, transaction_id=transaction_id).exists():

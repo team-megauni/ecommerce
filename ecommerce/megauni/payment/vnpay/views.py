@@ -18,6 +18,7 @@ from ecommerce.extensions.basket.utils import basket_add_organization_attribute
 from ecommerce.extensions.checkout.mixins import EdxOrderPlacementMixin
 from ecommerce.extensions.checkout.utils import get_receipt_page_url
 
+from ecommerce.megauni.payment.exceptions import InvalidAmountError
 from ecommerce.megauni.payment.vnpay.processor import VNPay
 
 logger = logging.getLogger(__name__)
@@ -81,6 +82,9 @@ class VNPayIPNView(EdxOrderPlacementMixin, View):
                 except InvalidSignatureError:
                     logger.warning(u"VNPay: Invalid signature for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '97', 'Message': u"Invalid signature"})
+                except InvalidAmountError:
+                    logger.warning(u"VNPay: Invalid amount for basket [%d].", basket.id)
+                    return JsonResponse({'RspCode': '04', 'Message': u"Invalid amount"})
                 except RedundantPaymentNotificationError:
                     logger.warning(u"VNPay: Order Already Update for basket [%d].", basket.id)
                     return JsonResponse({'RspCode': '02', 'Message': u"Order Already Update"})
