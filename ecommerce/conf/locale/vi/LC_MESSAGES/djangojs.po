@@ -14,15 +14,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: edx-platform\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-02-18 13:01+0000\n"
-"PO-Revision-Date: 2020-11-24 09:15+0000\n"
+"POT-Creation-Date: 2020-11-23 13:56+0000\n"
+"PO-Revision-Date: 2022-02-25 20:13+0700\n"
 "Last-Translator: Transifex Bot <>\n"
-"Language-Team: Vietnamese (http://www.transifex.com/open-edx/edx-platform/language/vi/)\n"
+"Language-Team: Vietnamese (http://www.transifex.com/open-edx/edx-platform/"
+"language/vi/)\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Poedit 3.0.1\n"
 
 #: ecommerce/static/js/models/coupon_model.js:33
 #: ecommerce/static/js/models/enterprise_coupon_model.js:15
@@ -133,11 +135,11 @@ msgstr "Tín dụng"
 
 #: ecommerce/static/js/models/course_seats/course_seat.js:89
 msgid "Professional"
-msgstr "Cao thủ"
+msgstr "Chuyên nghiệp"
 
 #: ecommerce/static/js/models/course_seats/course_seat.js:91
 msgid "Honor"
-msgstr "Tôn kính"
+msgstr "Danh dự"
 
 #: ecommerce/static/js/models/course_seats/course_seat.js:93
 msgid "Audit"
@@ -177,7 +179,9 @@ msgstr "Giá trị này phải là một email hợp lệ."
 
 #: ecommerce/static/js/pages/basket_page.js:27
 msgid "Problem occurred during checkout. Please contact support."
-msgstr "Đã xảy ra sự cố khi thanh toán. Vui lòng liên hệ với bộ phận hỗ trợ."
+msgstr ""
+"Đã xảy ra sự cố trong quá trình thanh toán. Vui lòng liên hệ với bộ phận hỗ "
+"trợ."
 
 #: ecommerce/static/js/pages/basket_page.js:101
 msgid "This field is required"
@@ -209,11 +213,11 @@ msgstr "Thẻ hết hạn"
 
 #: ecommerce/static/js/pages/basket_page.js:474
 msgid "<Choose state/province>"
-msgstr "<Chọn tiểu bang / tỉnh>"
+msgstr "<Chọn tiểu bang/tỉnh>"
 
 #: ecommerce/static/js/pages/basket_page.js:475
 msgid "State/Province (required)"
-msgstr "Bang / Tỉnh (bắt buộc)"
+msgstr "Bang/Tỉnh (bắt buộc)"
 
 #: ecommerce/static/js/pages/coupon_create_page.js:12
 #: ecommerce/static/js/pages/enterprise_coupon_create_page.js:12
@@ -256,15 +260,15 @@ msgstr "Mã phiếu thưởng doanh nghiệp"
 
 #: ecommerce/static/js/pages/offer_page.js:14
 msgid "Redeem"
-msgstr "Chuộc lại"
+msgstr "Mua lại"
 
 #: ecommerce/static/js/pages/receipt_page.js:21
 msgid ""
 "Caution! Using the back button on this page may cause you to be charged "
 "again."
 msgstr ""
-"Thận trọng! Việc sử dụng nút quay lại trên trang này có thể khiến bạn bị "
-"tính phí lại."
+"Cẩn thận! Việc sử dụng nút quay lại trên trang này có thể khiến bạn bị tính "
+"phí lại."
 
 #. Translators: Do not translate "Apple Pay".
 #: ecommerce/static/js/payment_processors/cybersource.js:225
@@ -353,12 +357,12 @@ msgstr "Khách hàng"
 
 #: ecommerce/static/js/views/coupon_list_view.js:61
 msgid "Category"
-msgstr "Danh mục"
+msgstr "Phân loại"
 
 #: ecommerce/static/js/views/coupon_list_view.js:67
 #: ecommerce/static/js/views/enterprise_coupon_list_view.js:62
 msgid "Coupon Report"
-msgstr "Báo cáo phiếu thưởng"
+msgstr "Báo cáo phiếu giảm giá"
 
 #: ecommerce/static/js/views/coupon_list_view.js:80
 #: ecommerce/static/js/views/course_list_view.js:25
@@ -368,7 +372,7 @@ msgstr "Tìm kiếm..."
 #: ecommerce/static/js/views/coupon_list_view.js:107
 #: ecommerce/static/js/views/course_list_view.js:52
 msgid "Next"
-msgstr "Tiếp theo"
+msgstr "Kế tiếp"
 
 #: ecommerce/static/js/views/coupon_list_view.js:108
 #: ecommerce/static/js/views/course_list_view.js:53
@@ -389,7 +393,7 @@ msgstr "(được lọc từ _MAX_ tổng số phiếu thưởng)"
 #. Translators: _MENU_ is a placeholder. Do NOT translate it.
 #: ecommerce/static/js/views/coupon_list_view.js:118
 msgid "Display _MENU_ coupons"
-msgstr "Hiển thị _MENU_ phiếu thưởng"
+msgstr "Hiển thị _BẢNG_CHỌN_ mã_giảm_giá"
 
 #: ecommerce/static/js/views/course_form_view.js:55
 msgid "Free (Audit)"
@@ -427,16 +431,16 @@ msgid ""
 "Paid certificate track with initial verification and Professional Education "
 "Certificate"
 msgstr ""
-"Theo dõi chứng chỉ trả phí với xác minh ban đầu và Chứng chỉ giáo dục chuyên"
-" nghiệp"
+"Theo dõi chứng chỉ trả phí với xác minh ban đầu và Chứng chỉ giáo dục "
+"chuyên nghiệp"
 
 #: ecommerce/static/js/views/course_form_view.js:78
 msgid ""
 "Paid certificate track with initial verification and Verified Certificate, "
 "and option to purchase credit"
 msgstr ""
-"Theo dõi chứng chỉ trả phí với xác minh ban đầu và Chứng chỉ đã xác minh, và"
-" tùy chọn để mua tín dụng"
+"Theo dõi chứng chỉ trả phí với xác minh ban đầu và Chứng chỉ đã xác minh, "
+"và tùy chọn để mua tín dụng"
 
 #. Translators: _START_, _END_, and _TOTAL_ are placeholders. Do NOT translate
 #. them.
@@ -452,7 +456,7 @@ msgstr "(được lọc từ _MAX_ tổng số khóa học)"
 #. Translators: _MENU_ is a placeholder. Do NOT translate it.
 #: ecommerce/static/js/views/course_list_view.js:63
 msgid "Display _MENU_ courses"
-msgstr "Hiển thị các khóa học _MENU_"
+msgstr "Hiển thị_BẢNG_CHỌN_các_khóa_học"
 
 #: ecommerce/static/js/views/course_list_view.js:69
 msgid "Course"
@@ -557,5 +561,5 @@ msgid ""
 "Failed to process refund #%(refund_id)s: %(error)s. Please try again, or "
 "contact the E-Commerce Development Team."
 msgstr ""
-"Không xử lý được khoản tiền hoàn lại #%(refund_id)s: %(error)s. Vui lòng thử"
-" lại hoặc liên hệ với Nhóm phát triển thương mại điện tử."
+"Không xử lý được khoản tiền hoàn lại #%(refund_id)s: %(error)s. Vui lòng "
+"thử lại hoặc liên hệ với Nhóm phát triển thương mại điện tử."
